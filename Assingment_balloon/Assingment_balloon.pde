@@ -1,10 +1,13 @@
 //Pakpoom phoonpunt
 void setup () {
+  int amount = 9 ;
   size (1000, 1000); // size of window 
   background(255); 
   fill(160);
-  balloon(int(random(50,950)),int(random(50,950)),int(random(50,950)),int(random(50,950))); // using function simple
-  
+  // start loop
+  for (int i = 0 ; i < amount ; i++ ){
+    balloon(int(random(50,950)),int(random(50,950)),int(random(50,950)),int(random(50,950))); 
+  }
 }
 
 void draw() {
