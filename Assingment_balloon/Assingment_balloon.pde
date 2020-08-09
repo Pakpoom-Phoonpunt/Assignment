@@ -1,10 +1,15 @@
 //Pakpoom phoonpunt
-int posx, posy, wide, high, amount = 9; // amount is amount of loop
+int posx, posy, wide, high; 
 void setup () {
   size (1000, 1000); // size of window 
   background(255); 
-  // start loop
-  for (int i = 0; i < amount; i++) {
+  
+}
+// run in void draw cuz the draw() function continuously executes the lines of code contained inside its block until the program is stopped.
+void draw() {
+  //Condition when you mousepressed or keypressed.
+  if(mousePressed | keyPressed){
+    delay(300); //set delay time
     fill(int(random(0,255)),int(random(0,255)),int(random(0,255))); // random color
     // random variable posx posy wide high
     posx = int(random(50, 950)); 
@@ -15,8 +20,4 @@ void setup () {
     ellipse(posx, posy, wide, high); 
     line( posx, posy+(high/2), posx, posy+(high/2)+(posy/2) );
   }
-}
-
-void draw() {
-
 }
