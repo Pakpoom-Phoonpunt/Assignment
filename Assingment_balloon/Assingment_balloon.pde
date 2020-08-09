@@ -15,6 +15,9 @@ void draw() { // simple balloon animation using  background() in draw() for crea
     delay(150);
     posY -= step ;
   }
+  if(posY == 0){ // condition when balloon fly over size
+    posY = height;
+  }
 }
 
 //create function have 4 parameter
