@@ -5,10 +5,16 @@ void setup () {
 }
 int posY = 1000;
 void draw() { // simple balloon animation using  background() in draw() for create new background when finish one loop and new balloon with new position Y 
+  int step = 20;
   background(255); 
   balloon(300, posY, 150 , 150 );
-  delay(150);
-  posY -= 20 ;
+  if(mousePressed | keyPressed){ // using condition to stop balloon
+    step = 0  ;
+  }
+  else{
+    delay(150);
+    posY -= step ;
+  }
 }
 
 //create function have 4 parameter
