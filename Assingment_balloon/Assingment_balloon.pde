@@ -1,27 +1,30 @@
 //Pakpoom phoonpunt
 void setup () {
   size (1000, 1000); // size of window 
-
-}
-int posY = 1000;
-void draw() { // simple balloon animation using  background() in draw() for create new background when finish one loop and new balloon with new position Y 
-  int step = 20;
-  background(255); 
-  balloon(300, posY, 150 , 150 );
-  if(mousePressed | keyPressed){ // using condition to stop balloon
-    step = 0  ;
-  }
-  else{
-    delay(150);
-    posY -= step ;
-  }
-  if(posY == 0){ // condition when balloon fly over size
-    posY = height;
-  }
+  Balloon ball1 = new Balloon(200,200,50,50); //create objects
+  ball1.show();// use show() method
 }
 
-//create function have 4 parameter
-void balloon (int posx  ,int posy  ,int wide  ,int high ){
-   ellipse(posx, posy, wide, high); 
-   line( posx, posy+(high/2), posx, posy+(high/2)+(high/2) );
+void draw() {
+
+}
+
+class Balloon{ // create class name Balloon
+  // class have 4 attibute
+  int posx;
+  int posy;
+  int wide;
+  int high;
+  Balloon(int iposx,int iposy ,int iwide,int ihigh){ // create class constructor like python
+    //self.name = name
+     posx = iposx;
+     posy = iposy;
+     wide = iwide;
+     high = ihigh;
+  }
+  //method
+  void show(){ //method show Balloon
+    ellipse(posx , posx , wide , high);
+    line(posx , posy+(high/2) , posx , posy+(high/2)+(wide/2) ); 
+  }
 }
